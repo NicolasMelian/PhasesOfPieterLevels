@@ -1,1 +1,78 @@
-"P" 
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Creative Qoutes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="basic.css" />
+
+</head>
+
+<body>
+
+    <div class="icons">
+        <img src="src/coffee.png" id="coffee" class="spin" alt="coffee grains">
+        <a id="link-tw" onclick="openW()" target="blank">
+            <img id="icon-twitter" src="src/twitter-icon.png" alt="icon twitter">
+        </a>
+
+        <div class="cf1">
+
+            <img src="src/minRemoteOk.png" alt="Logo Remote Ok" id="logoRemote">
+            <img class="top" src="src/tree.png" alt="tree colorful" id="tree">
+        </div>
+    </div>
+
+    <div class="quote">
+        <blockquote id="target"> </blockquote>
+        <span id="targetSpan"></span>
+    </div>
+
+
+    <div class="buttons">
+
+        <div class="cf">
+            <img src="src/nomadList.png" alt="Nomad List Logo">
+
+            <img class="top" src="src/maths.jpeg" alt="colorful maths slate">
+        </div>
+        <img src="src/brain.png" id="brain" onclick="newPhrase()" alt="brain-image">
+        <img class="spin" src="src/bicycle.png" id="bicycle" alt="bicycle">
+
+
+
+    </div>
+
+</body>
+<script>
+    var target = document.getElementById("target");
+    var targetSpan = document.getElementById("targetSpan");
+
+    var phasesOfPieterLevels = [
+        'I am like a corner store, and I charge for these sandwiches. Please pay for them when you like them so I can continue making them"',
+        'Netflix charges $ 10, but that is a billion-dollar company. You are a small manufacturer. You may have to charge $ 30 per month"',
+        'I do not want to create a product for everyone. I want to create one that I would like to use, which means that I must make decisions that go against what people say"',
+        'Most important skill I learnt: just keep shipping day in day out. The emotional ups and downs average out. Just showing up every day adds up"',
+        'If you’re going through hell, keep going”',
+        'Your emotions can be a misleading hostage taker of your brain that’ll try make you give up. Stop listening. Ship your thing. Yes it hurts"',
+        'It does is not matter if you are an artist, creative, product maker or a startup: the concept of "image" is dead. It is the age of honesty"',
+        ' I see this arrogance of, "No, this is our startup. It\'s going to work. Our product is much better, it\'s great." don\'t be so arrogant man. Validate, and see if it\'s true"'
+    ];
+    target.innerText = phasesOfPieterLevels[0];
+    targetSpan.innerText = '@levelsio';
+    var delta = 0;
+    document.getElementById('link-tw').href = 'https://www.twitter.com/intent/tweet?text="' + encodeURIComponent(phasesOfPieterLevels[0]) + " by " + encodeURIComponent('@levelsio');
+    function newPhrase() {
+        var i = (Math.random() * phasesOfPieterLevels.length) | 0;
+        target.innerText = phasesOfPieterLevels[i];
+        document.getElementById('link-tw').href = 'https://www.twitter.com/intent/tweet?text="' + encodeURIComponent(phasesOfPieterLevels[i]) + " by " + encodeURIComponent('@levelsio');
+
+    };
+
+
+
+</script>
+
+</html> 

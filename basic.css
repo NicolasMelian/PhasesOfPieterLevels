@@ -1,0 +1,219 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic);
+
+.container {
+    height: 100%; 
+    grid-gap: 15px;
+    justify-items: center;
+    align-items: center;
+}
+
+.container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    color:#58583d;
+}
+html{
+    background: url("src/background.jpg");
+    height: max-content;
+}
+
+html, body {
+  box-sizing: border-box;
+  padding: 10px;
+  margin-left: 15px;
+}
+
+.icons{
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 160px; 
+    align-content: center;
+    justify-content: center;
+}
+
+.buttons{
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 160px;    
+    align-content: center;
+    justify-content: center;
+} 
+
+
+#icon-twitter{
+    grid-column: 6/ 9;
+}
+
+#tree{
+    max-height: 180px;
+}
+
+#brain{
+    transform: scale(0.9);
+    grid-column: 6/9;
+}
+#brain:hover {
+    opacity: 0.8;
+}
+
+#bicycle {
+    grid-column: 9 / -1;
+    padding-top: 35px;
+    transform: perspective(160px) translateZ(-30px);
+}
+
+#coffee {
+    grid-column: 1 /6;
+}
+#logoRemote {
+    margin: 50px;
+    margin-left: 100px;
+}
+
+.spin {
+        cursor: pointer;
+        transform-style: preserve-3d;
+    }
+.spin:hover {
+          animation: spin 5s linear infinite;
+    
+    }
+ @keyframes spin {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+.quote{
+  font-size: 1.5em;
+  width:70%;
+  margin:50px auto;
+  font-family:Open Sans;
+  font-style:italic;
+  color: #555555;
+  padding:1.2em 30px 1em 75px;
+  border-left:8px solid #574E4E ;
+  line-height:1.6;
+  position: relative;
+  background:#DAD6CA
+}
+
+.quote::before{
+  font-family:Arial;
+  content: "\201C";
+  color:#574E4E;
+  font-size:4em;
+  position: absolute;
+  left: 10px;
+  top:-10px;
+}
+
+.quote::after{
+  content: '';
+}
+
+.quote span{
+  display:block;
+  color:#333333;
+  font-style: normal;
+  font-weight: bold;
+  margin-top:1em;
+}
+
+.cf1{
+    position: relative;
+    grid-column: 9/ -1;
+    height:180px;
+    width:100px;
+}
+.cf1 img {
+    position:absolute;
+    left:0;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .cf1 img.top:hover {
+    opacity:0;
+  }
+
+  .cf {
+    position:relative;
+    height:200px;
+    width:120px;
+    grid-column: 1 / 5;
+    
+  }
+  .cf img {
+    position:absolute;
+    left:0;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .cf img.top:hover {
+    opacity:0;
+  }
+@media only screen and (max-width: 700px) {
+   
+    html, body{
+    box-sizing: border-box;
+    padding: 0px;
+    margin-left: 0px;
+
+    }
+    .cf {
+        visibility: hidden;
+    }
+    .icons{
+        height: 100%;
+        display: flex;
+        grid-template-columns: repeat(auto-fit, minmax(1fr, 12));
+        grid-template-rows: 160px;
+        align-content: center;
+        justify-content: center;
+    }
+    .quote{
+        width: 70%;
+    }
+    #icon-twitter{
+        grid-column: 1/ 6;
+    }
+    .cf1 {
+        grid-column: 6/-1;
+    }
+    .buttons{
+        height: 100%;
+        display: flex;
+        grid-template-columns: repeat(auto-fit, minmax(1fr, 12));
+        grid-template-rows: 150px;
+        align-content: center;
+        justify-content: center;
+    }     
+    #bicycle {
+        width: 180px;
+        height: 100px;        
+    }
+    #brain {
+        width: 180px;
+        height: 140px;
+    }
+    #coffee{
+        visibility: hidden;
+        position: absolute;
+    }
+    #maths {
+        visibility: hidden;
+        position: absolute;
+    }
+}
